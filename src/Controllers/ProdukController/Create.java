@@ -29,7 +29,7 @@ public class Create { // ubah menjadi publik
             double harga = Double.parseDouble(hargaText);
 
             Produk produkBaru = new Produk(0, nama, harga);
-            boolean berhasil = produkModel.tambahProduk(produkBaru);
+            boolean berhasil = produkModel.create(produkBaru);
 
             if (berhasil) {
                 System.out.println("Produk berhasil ditambahkan.");

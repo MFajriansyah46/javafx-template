@@ -14,9 +14,11 @@ public class ProdukModel {
 
     private static Connection connection = Database.getConnection();
 
-    public List<Produk> getSemuaProduk() {
+    public List<Produk> getAll() {
         List<Produk> produkList = new ArrayList<>();
-        String sql = "SELECT * FROM produk";
+
+        String tabel = "produk";
+        String sql = "SELECT * FROM " + tabel;
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
@@ -35,7 +37,7 @@ public class ProdukModel {
         return produkList;
     }
 
-    public boolean tambahProduk(Produk produk) {
+    public boolean create(Produk produk) {
         String sql = "INSERT INTO produk (nama_produk, harga) VALUES (?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, produk.getNama());
@@ -48,7 +50,7 @@ public class ProdukModel {
         return false;
     }
 
-    public boolean updateProduk(int id, String namaBaru, double hargaBaru) {
+    public boolean update(int id, String namaBaru, double hargaBaru) {
         String sql = "UPDATE produk SET nama_produk = ?, harga = ? WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, namaBaru);
@@ -64,7 +66,7 @@ public class ProdukModel {
     }
     
 
-    public boolean hapusProduk(int id) {
+    public boolean delete(int id) {
         String sql = "DELETE FROM produk WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, id);

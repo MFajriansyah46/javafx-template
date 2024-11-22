@@ -42,7 +42,7 @@ public class Index {
 
     // Method untuk memuat data ke dalam tabel
     public void refreshTable() {
-        ObservableList<Produk> data = FXCollections.observableArrayList(produkModel.getSemuaProduk());
+        ObservableList<Produk> data = FXCollections.observableArrayList(produkModel.getAll());
         tableProduk.setItems(data);
     }
 
@@ -72,7 +72,7 @@ public class Index {
     public void hapusProduk() {
         Produk selected = tableProduk.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            boolean deleted = produkModel.hapusProduk(selected.getId());
+            boolean deleted = produkModel.delete(selected.getId());
             if (deleted) {
                 System.out.println("Produk berhasil dihapus.");
                 refreshTable();
