@@ -1,7 +1,7 @@
 package Controllers;
 
-import hellofx1.*;
 import Models.ProdukModel;
+import getter.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

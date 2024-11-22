@@ -1,7 +1,7 @@
 package Controllers;
 
-import hellofx1.Produk;
 import Models.ProdukModel;
+import getter.Produk;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;

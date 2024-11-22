@@ -1,4 +1,4 @@
-package hellofx1;
+package getter;
 
 public class Produk {
     private int id;

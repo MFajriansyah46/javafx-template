@@ -1,7 +1,8 @@
 package Models;
 
-import hellofx1.Produk;
 import database.Database;
+import getter.Produk;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
