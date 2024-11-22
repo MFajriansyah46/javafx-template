@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.ProdukController;
 
 import Models.ProdukModel;
 import getter.Produk;
@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
-public class AddController { // ubah menjadi publik
+public class Create { // ubah menjadi publik
     @FXML
     private TextField txtNamaProduk;
 

@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/mainscene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainscene.fxml"));
         Parent root = loader.load();
     
         primaryStage.setTitle("Daftar Produk");

@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.ProdukController;
 
 import Models.ProdukModel;
 import getter.*;
@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Controller {
+public class Index {
 
     private final ProdukModel produkModel = new ProdukModel();
 
@@ -51,7 +51,7 @@ public class Controller {
     public void tambahProduk() {
         try {
             // Load formAdd.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/formAdd.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/formAdd.fxml"));
             Parent root = loader.load();
 
             // Buka dialog
