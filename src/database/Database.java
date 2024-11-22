@@ -1,12 +1,12 @@
-package hellofx1;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private static Connection connection;
 
+    private static Connection connection;
     /**
      * Menginisialisasi koneksi ke database MySQL.
      * @return Connection objek
@@ -46,3 +46,4 @@ public class Database {
         }));
     }
 }
+
