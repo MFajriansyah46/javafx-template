@@ -1,5 +1,3 @@
-package Main;
-
 import database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,16 +9,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainscene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/index.fxml"));
         Parent root = loader.load();
     
         primaryStage.setTitle("Daftar Produk");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 900, 600));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-        
         launch(args);
         Database.initializeShutdownHook();
     }

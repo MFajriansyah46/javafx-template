@@ -61,7 +61,7 @@ public class Index {
     public void tambahProduk() {
         try {
             // Load formAdd.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/formAdd.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/create.fxml"));
             Parent root = loader.load();
 
             // Buka dialog
@@ -83,7 +83,7 @@ public class Index {
     public void editProduk(Produk selected) {
         try {
             // Load formEdit.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/formEdit.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/edit.fxml"));
             Parent root = loader.load();
 
             // Mengakses controller formEdit
