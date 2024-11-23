@@ -14,7 +14,7 @@ public class Database {
     public static Connection getConnection() {
         if (connection == null) {
             String url = "jdbc:mysql://localhost/restapi"; 
-            String username = "root"; 
+            String username = "root";  
             String password = ""; 
 
             try {

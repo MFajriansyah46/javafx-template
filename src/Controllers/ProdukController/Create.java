@@ -8,15 +8,12 @@ import javafx.scene.control.TextField;
 
 public class Create { // ubah menjadi publik
     @FXML
-    private TextField txtNamaProduk;
-
-    @FXML
-    private TextField txtHargaProduk;
+    private TextField txtNamaProduk, txtHargaProduk;
 
     private ProdukModel produkModel = new ProdukModel();
 
     @FXML
-    private void simpanProduk() {
+    private void store() {
         String nama = txtNamaProduk.getText().trim();
         String hargaText = txtHargaProduk.getText().trim();
 
@@ -29,7 +26,7 @@ public class Create { // ubah menjadi publik
             double harga = Double.parseDouble(hargaText);
 
             Produk produkBaru = new Produk(0, nama, harga);
-            boolean berhasil = produkModel.create(produkBaru);
+            boolean berhasil = produkModel.save(produkBaru);
 
             if (berhasil) {
                 System.out.println("Produk berhasil ditambahkan.");
@@ -44,7 +41,7 @@ public class Create { // ubah menjadi publik
     }
 
     @FXML
-    private void batal() {
+    private void cancel() {
         Stage stage = (Stage) txtNamaProduk.getScene().getWindow();
         stage.close();
     }

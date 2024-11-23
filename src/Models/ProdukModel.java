@@ -37,7 +37,7 @@ public class ProdukModel {
         return produkList;
     }
 
-    public boolean create(Produk produk) {
+    public boolean save(Produk produk) {
         String sql = "INSERT INTO produk (nama_produk, harga) VALUES (?, ?)";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, produk.getNama());

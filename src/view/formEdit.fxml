@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProdukController.Edit">
    <children>
-      <VBox layoutX="130.0" layoutY="104.0" prefHeight="200.0" prefWidth="374.0" fx:controller="Controllers.ProdukController.Create">
+      <VBox layoutX="130.0" layoutY="104.0" prefHeight="200.0" prefWidth="374.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nama">
                <VBox.margin>
@@ -25,16 +25,16 @@
                </VBox.margin>
             </Text>
             <TextField fx:id="txtHargaProduk" />
-            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" style="-fx-padding: 10;">
                <VBox.margin>
                   <Insets top="16.0" />
                </VBox.margin>
-               <Button mnemonicParsing="false" onAction="#store" text="Submit" style="-fx-background-color: blue; -fx-text-fill: white;" />
-               <Button mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+               <Button mnemonicParsing="false" onAction="#simpanPerubahan" text="Simpan" style="-fx-background-color: blue; -fx-text-fill: white;" />
+               <Button mnemonicParsing="false" onAction="#tutupForm" text="Batal" />
             </HBox>
          </children>
       </VBox>
-      <Text layoutX="189.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tambahkan Produk" textAlignment="CENTER">
+      <Text layoutX="189.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Produk" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>

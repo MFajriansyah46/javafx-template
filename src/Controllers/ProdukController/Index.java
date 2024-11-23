@@ -38,6 +38,16 @@ public class Index {
         colHarga.setCellValueFactory(new PropertyValueFactory<>("harga"));
 
         refreshTable();
+
+        // Tambahkan event handler untuk klik dua kali pada tabel
+        tableProduk.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) { // Deteksi klik dua kali
+                Produk selected = tableProduk.getSelectionModel().getSelectedItem();
+                if (selected != null) {
+                    editProduk(selected); // Buka form edit
+                }
+            }
+        });
     }
 
     // Method untuk memuat data ke dalam tabel
@@ -57,6 +67,32 @@ public class Index {
             // Buka dialog
             Stage stage = new Stage();
             stage.setTitle("Tambah Produk Baru");
+            stage.initModality(Modality.APPLICATION_MODAL); // Membuat dialog modal
+            stage.setScene(new Scene(root));
+            stage.showAndWait(); // Tunggu hingga dialog ditutup
+
+            // Setelah form ditutup, refresh tabel
+            refreshTable();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method untuk mengedit produk
+    @FXML
+    public void editProduk(Produk selected) {
+        try {
+            // Load formEdit.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/formEdit.fxml"));
+            Parent root = loader.load();
+
+            // Mengakses controller formEdit
+            Edit controller = loader.getController();
+            controller.setProdukData(selected); // Kirim data produk yang akan diedit
+
+            // Buka dialog
+            Stage stage = new Stage();
+            stage.setTitle("Edit Produk");
             stage.initModality(Modality.APPLICATION_MODAL); // Membuat dialog modal
             stage.setScene(new Scene(root));
             stage.showAndWait(); // Tunggu hingga dialog ditutup
